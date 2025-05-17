@@ -27,7 +27,7 @@ DEBUG = True
 
 
 # Allow all hosts for development
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', 'upgraded-palm-tree-j6j5j5q76grcg65-8000.app.github.dev']
 
 
 # Application definition

@@ -6,7 +6,10 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = 'http://localhost:8000/'
+    # Use Codespace URL if available, otherwise fallback to localhost
+    codespace_url = 'https://upgraded-palm-tree-j6j5j5q76grcg65-8000.app.github.dev/'
+    local_url = 'http://localhost:8000/'
+    base_url = codespace_url if 'upgraded-palm-tree-j6j5j5q76grcg65-8000.app.github.dev' in request.get_host() else local_url
     return Response({
         'users': base_url + 'api/users/?format=api',
         'teams': base_url + 'api/teams/?format=api',
